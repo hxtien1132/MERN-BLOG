@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 console.log("123123");
-app.use("/", (req, res, next) => {
+app.use("/api", (req, res, next) => {
   res.json("123123");
 });
 app.use("/uploads", express.static(__dirname + "/uploads"));
