@@ -7,8 +7,6 @@ const User = require("../models/userModel");
 
 const path = require("path");
 const fs = require("fs");
-const { error } = require("console");
-const { response } = require("express");
 // Create a new post
 const createPost = asyncHandler(async (req, res, next) => {
   try {
