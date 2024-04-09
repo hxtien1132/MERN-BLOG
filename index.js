@@ -7,6 +7,8 @@ const createFile = require("./config/file");
 // var path = require("path");
 const dbConnect = require("./config/connect");
 const userRouter = require("./routes/userRoutes");
+const postRouter = require("./routes/postRoutes");
+
 require("dotenv").config();
 const app = express();
 dbConnect();
