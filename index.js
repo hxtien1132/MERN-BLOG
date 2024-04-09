@@ -15,8 +15,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 console.log("123123");
-app.use("/api/users", userRouter);
-
+app.use("/api/users", (req, res, next) => {
+  res.json("123123");
+});
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.use(notFound);
