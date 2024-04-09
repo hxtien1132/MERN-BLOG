@@ -2,6 +2,7 @@ const express = require("express");
 var bodyParser = require("body-parser");
 const cors = require("cors");
 // const upload = require("express-fileupload");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const createFile = require("./config/file");
 // var path = require("path");
 const dbConnect = require("./config/connect");
@@ -17,5 +18,7 @@ console.log("123123");
 app.use("/", (req, res, next) => {
   res.json("preasdasd");
 });
+app.use(notFound);
+app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`server run in port ${5000}`));
