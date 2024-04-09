@@ -14,8 +14,8 @@ const {
 const postRouter = Router();
 
 postRouter.get("/:id", getPost);
-postRouter.get("/", getPosts);
-postRouter.post("/", authMiddleware, createPost);
+postRouter.get("", getPosts);
+postRouter.post("", authMiddleware, createPost);
 postRouter.delete("/:id", authMiddleware, deletePost);
 postRouter.get("/categories/:category", getCatPosts);
 postRouter.get("/users/:id", getUserPosts);
