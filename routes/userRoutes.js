@@ -24,7 +24,7 @@ userRouter.post("/login", loginUser);
 userRouter.post("/logout", logoutUser);
 userRouter.get("/:id", getUser);
 userRouter.patch("/edit-user", authMiddleware, editUser);
-userRouter.get("/", getAuthors);
+userRouter.get("", getAuthors);
 userRouter.post("/change-avatar", authMiddleware, changeAvatar);
 
 module.exports = userRouter;

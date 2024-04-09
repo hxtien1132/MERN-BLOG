@@ -1,5 +1,4 @@
 const { Router } = require("express");
-// const asyncHandler = require("express-async-handler");
 const authMiddleware = require("../middleware/authMiddleware");
 
 const {
@@ -14,8 +13,8 @@ const {
 const postRouter = Router();
 
 postRouter.get("/:id", getPost);
-postRouter.get("", getPosts);
-postRouter.post("", authMiddleware, createPost);
+postRouter.get("/", getPosts);
+postRouter.post("/", authMiddleware, createPost);
 postRouter.delete("/:id", authMiddleware, deletePost);
 postRouter.get("/categories/:category", getCatPosts);
 postRouter.get("/users/:id", getUserPosts);
