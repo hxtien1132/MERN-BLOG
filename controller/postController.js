@@ -67,14 +67,14 @@ const getPost = asyncHandler(async (req, res, next) => {
 });
 // get posts
 // GET: api/posts
-const getPosts = asyncHandler(async (req, res, next) => {
+const getPosts = async (req, res, next) => {
   try {
     const posts = await Post.find().sort({ createdAt: -1 });
     res.status(200).json(posts);
   } catch (error) {
     next(new HttpError(error));
   }
-});
+};
 // get posts by category
 // GET: api/posts/categories/:category
 const getCatPosts = asyncHandler(async (req, res, next) => {
