@@ -19,14 +19,12 @@ const userRouter = Router();
 //     res.json("this is router user");
 //   })
 // );
-userRouter.get("/register", async (req, res, next) => {
-  res.json("this is");
-});
-// userRouter.post("/login", loginUser);
-// userRouter.post("/logout", logoutUser);
-// userRouter.get("/:id", getUser);
-// userRouter.patch("/edit-user", authMiddleware, editUser);
-// userRouter.get("/", getAuthors);
-// userRouter.post("/change-avatar", authMiddleware, changeAvatar);
+userRouter.post("/register", registerUser);
+userRouter.post("/login", loginUser);
+userRouter.post("/logout", logoutUser);
+userRouter.get("/:id", getUser);
+userRouter.patch("/edit-user", authMiddleware, editUser);
+userRouter.get("/", getAuthors);
+userRouter.post("/change-avatar", authMiddleware, changeAvatar);
 
 module.exports = userRouter;
