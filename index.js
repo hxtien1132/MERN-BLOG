@@ -1,11 +1,14 @@
 const express = require("express");
 var bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config();
 // const upload = require("express-fileupload");
-// const createFile = require("./config/file");
+const createFile = require("./config/file");
 // var path = require("path");
+const dbConnect = require("./config/connect");
+require("dotenv").config();
 const app = express();
+dbConnect();
+createFile();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
