@@ -1,7 +1,7 @@
 const express = require("express");
 var bodyParser = require("body-parser");
 const cors = require("cors");
-// const upload = require("express-fileupload");
+const upload = require("express-fileupload");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const createFile = require("./config/file");
 // var path = require("path");
@@ -18,6 +18,8 @@ console.log("123123");
 app.use("/", (req, res, next) => {
   res.json("preasdasd");
 });
+app.use("/uploads", express.static(__dirname + "/uploads"));
+
 app.use(notFound);
 app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
