@@ -85,9 +85,10 @@ const changeAvatar = asyncHandler(async (req, res, next) => {
           if (err) return next(new HttpError(err));
           // else console.log("Deleted file:", filePath);
         });
-      } else {
-        console.log("file not found", filePath);
       }
+      //  else {
+      //   // console.log("file not found", filePath);
+      // }
     }
     const { avatar } = req.files;
     if (avatar.size > 500000) {
@@ -142,7 +143,7 @@ const editUser = asyncHandler(async (req, res, next) => {
       return next(new HttpError("Fill in all Fields", 422));
     }
     //check user exist
-    console.log(req.user.id);
+    // console.log(req.user.id);
     const user = await User.findById(req.user.id);
     if (!user) {
       return next(HttpError("User not found", 403));
@@ -155,7 +156,7 @@ const editUser = asyncHandler(async (req, res, next) => {
 
     //compare currentpassword is the same as password  db
     const validateUserPassword = await user.matchPassword(currentPassword);
-    console.log(validateUserPassword);
+    // console.log(validateUserPassword);
     if (!validateUserPassword) {
       return next(new HttpError("Invalid current password", 422));
     }
