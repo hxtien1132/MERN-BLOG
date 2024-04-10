@@ -15,7 +15,7 @@ dbConnect();
 createFile();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "https://mern-blog-client-five.vercel.app" }));
 console.log("123123");
 app.use("/api/users", userRouter);
 app.use("/api/posts", postRouter);
